@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unit 2 Assessment Prep</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Cars collection</h1>
+
+    <% if (cars.length === 0 ){%>
+      <p>There are no Cars in your collection yet!</p>
+    <% }else{ %>
+      <table>
+        <thead>
+          <th>Make:</th>
+          <th>Model:</th>
+        <th>Tank:</th>
+      </thead>
+      <%cars.forEach(function(c){%>
+        <tr>
+          <td><%= c.make %></td>
+          <td><%= c.model %></td>
+          <td><%= c.fullTank ? "Full" : "Empty" %> </td>
+        </tr>
+    <%})}%>
+    
+    <form action="/" method="POST">
+      <label> Make
+        <input type="text" name="make" >
+      </label>
+      <label> Model
+        <input type="text" name="model">
+      </label>
+      
+      <button type="submit">Car it up</button>
+
+    </form>
+  </body>
+</html>
